@@ -1,0 +1,11 @@
+<article>
+  {% if recipe.image %}
+  <img src="{{ recipe.image }}" style="max-height: 250px; border-radius: 8px" />
+  {% endif %}
+  <h2>{{ recipe.name }}</h2>
+  <p>{{ recipe.description }}</p>
+
+  <details>
+    <pre><code>{{ recipe_json }}</code></pre>
+  </details>
+</article>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rezept zu Tandoor JSON</title>
+    <script src="https://unpkg.com/htmx.org@2.0.0/dist/htmx.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <h1>🍳 Rezept zu Tandoor JSON</h1>
+      <p>Rezept-URL eingeben → erzeugtes JSON in Tandoor Import einfügen.</p>
+
+      <form
+        hx-post="/import"
+        hx-target="#result"
+        hx-swap="innerHTML"
+        hx-indicator="#spinner"
+      >
+        <fieldset role="group">
+          <input
+            type="url"
+            name="url"
+            placeholder="https://www.allrecipes.com/recipe/..."
+            required
+          />
+          <button type="submit">JSON generieren</button>
+        </fieldset>
+      </form>
+
+      <span id="spinner" class="htmx-indicator">⏳ Wird generiert...</span>
+
+      <div id="result"></div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+fastapi
+python-multipart
+uvicorn[standard]
+jinja2
+recipe-scrapers
+httpx
+deepl
+pint
+ingredient-parser-nlp
